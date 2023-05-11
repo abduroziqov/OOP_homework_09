@@ -16,14 +16,16 @@
             myQueue.Enqueue(9);
             myQueue.Enqueue(10);
 
+            Console.ForegroundColor = ConsoleColor.Green;
+
             for (int i = 0; i <= 10; i++)
             {
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"Current queue : {myQueue.Dequeue()}");
-                Console.ReadKey();
-
-
+                if (myQueue.Count != 0)
+                {
+                    Console.Clear();
+                    Console.WriteLine($"Current queue : {myQueue.Dequeue()}");      
+                    Console.ReadKey();
+                }
             }
         }
     }
